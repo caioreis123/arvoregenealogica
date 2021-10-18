@@ -3,8 +3,6 @@ package arvoregenealogica;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 
 public class ArvoreGenealogicaGUI extends JFrame{
     private JPanel mainPanel;
@@ -18,7 +16,6 @@ public class ArvoreGenealogicaGUI extends JFrame{
     private JTextField filhoTexto;
 
     public ArvoreGenealogicaGUI(String title){
-//        super(title);
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(mainPanel);
@@ -41,8 +38,6 @@ public class ArvoreGenealogicaGUI extends JFrame{
                     pai.cadastrarFilho(filho);
                     familiaresComboBox.addItem(filho);
                 }
-                System.out.println("ascendentes antes: " + pai.ascendentes);
-
             }
         });
 
@@ -50,12 +45,8 @@ public class ArvoreGenealogicaGUI extends JFrame{
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 Pessoa pessoaSelecionada = (Pessoa) familiaresComboBox.getSelectedItem();
-                System.out.println("pessoaSelecionada : " + pessoaSelecionada);
-                System.out.println("ascendentes : " + pessoaSelecionada.ascendentes);
-                System.out.println("descendentes : " + pessoaSelecionada.descendentes);
                 textPane.setText(pessoaSelecionada.toString());
                 for (int index=pessoaSelecionada.ascendentes.size()-1; index >= 0; index--){
-                    System.out.println("index"+ index);
                     Pessoa pessoaAtual = pessoaSelecionada.ascendentes.get(index);
                     textPane.setText(textPane.getText()+"\n"+pessoaAtual.toString());
                 }

@@ -6,11 +6,6 @@ public class Filho extends Pessoa{
         setNome(nome);
     }
 
-//	@Override
-//	public void cadastrarFilho(Pessoa filho) {
-//
-//	}
-
 	@Override
 	public void setNome(String nome) {
 		this.nome = "Sr. "+ nome;

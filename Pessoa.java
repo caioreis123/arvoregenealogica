@@ -7,7 +7,6 @@ import java.util.Random;
 public abstract class Pessoa {
 	
 	protected String nome;
-//	private Pessoa pai;
 	protected ArrayList<Pessoa> descendentes=new ArrayList<>();
 	protected ArrayList<Pessoa> ascendentes=new ArrayList<>();
 
